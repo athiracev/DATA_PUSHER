@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "ec694ea0-edf1-4d0a-a25e-ee6dc0ba94c3",
+		"name": "DATA PUSHER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21800713"
+	},
+	"item": [
+		{
+			"name": "destination",
+			"item": [
+				{
+					"name": "create destination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"url\": \"https://webhook.site/xxxx\",\r\n  \"httpMethod\": \"\",\r\n  \"headers\": {\r\n    \"Content-Type\": \"application/json\",\r\n    \"APP_ID\": \"345\",\r\n    \"APP_SECRET\": \"CDE\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/destinations/a63c7f86-740d-4361-94c0-f94c4f756979",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"destinations",
+								"a63c7f86-740d-4361-94c0-f94c4f756979"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all destination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "4a5847ba-2b6b-45b9-a528-03f2a6cdcb27",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"1\",\r\n  \"event\": \"user.update\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/destinations/a63c7f86-740d-4361-94c0-f94c4f756979",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"destinations",
+								"a63c7f86-740d-4361-94c0-f94c4f756979"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Handle",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "4a5847ba-2b6b-45b9-a528-03f2a6cdcb27",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"1\",\r\n  \"event\": \"user.update\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/server/incoming_data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"server",
+								"incoming_data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "add account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"demo@example.com\",\r\n  \"accountName\": \"demo\",\r\n  \"website\": \"https://demo.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"athira@example.com\",\r\n  \"accountName\": \"Athira\",\r\n  \"website\": \"https://athira.com\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"athira@example.com\",\r\n  \"accountName\": \"Athira\",\r\n  \"website\": \"https://athira.com\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/accounts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"accounts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"demo@gmail.com\"\r\n//   \"accountName\": \"Athira\",\r\n//   \"website\": \"https://athira.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/accounts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"accounts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"athira@example.com\",\r\n  \"accountName\": \"Athira\",\r\n  \"website\": \"https://athira.com\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/accounts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
